@@ -21,10 +21,10 @@ class S3Service(
 ) {
 
     @Value("\${cloud.aws.s3.bucket}")
-    val bucket: String? = null
+    lateinit var bucket: String
 
     @Value("\${cloud.aws.s3.dir}")
-    val dir: String? = null
+    lateinit var dir: String
 
     @Throws(IOException::class)
     fun upload(file: MultipartFile): String {
